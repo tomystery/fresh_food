@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <user-card></user-card>
+</body>
+<script>
+  class UserCard extends HTMLElement{
+    constructor(){
+      super();
+
+      var image = document.createElement('img');
+    image.src = 'https://semantic-ui.com/images/avatar2/large/kristy.png';
+    image.classList.add('image');
+
+    var container = document.createElement('div');
+    container.classList.add('container');
+
+    var name = document.createElement('p');
+    name.classList.add('name');
+    name.innerText = 'User Name';
+
+    var email = document.createElement('p');
+    email.classList.add('email');
+    email.innerText = 'yourmail@some-email.com';
+
+    var button = document.createElement('button');
+    button.classList.add('button');
+    button.innerText = 'Follow';
+
+    container.append(name, email, button);
+    this.append(image, container);
+    }
+  }
+
+  window.customElements.define('user-card',UserCard)
+
+  // index2.html介绍使用web-component提供的template使用结构
+</script>
+</html>
